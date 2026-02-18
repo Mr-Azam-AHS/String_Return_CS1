@@ -11,13 +11,15 @@ public class LabTests {
             AddStrings add = new AddStrings();
             assertNotNull(add, "Constructor returned null");
             // Assuming default toString is empty or specific format
-            // assertEquals("", add.toString(), "Default constructor should verify empty state"); 
+            // assertEquals("", add.toString(), "Default constructor should verify empty
+            // state");
         }
 
         @Test
         public void testParameterizedConstructor() {
             AddStrings add = new AddStrings("Hello", "World");
-            assertEquals("HelloWorld", add.toString(), "Parameterized constructor did not set values correctly (checked via toString)");
+            assertEquals("HelloWorld", add.toString(),
+                    "Parameterized constructor did not set values correctly (checked via toString)");
         }
 
         @Test
@@ -31,9 +33,9 @@ public class LabTests {
         @Test
         public void testAdd() {
             AddStrings add = new AddStrings("Hello", "World");
-            add.add(); 
-            // If add() is void, does it change internal state? 
-            // If add() returns a string, capture it! 
+            add.add();
+            // If add() is void, does it change internal state?
+            // If add() returns a string, capture it!
             // Assuming add() updates internal state:
             assertEquals("HelloWorld", add.toString(), "add() method failed to concatenate strings");
         }
@@ -64,9 +66,8 @@ public class LabTests {
             name.setName("Jane Smith");
             // Must verify the set worked!
             assertAll("setName verification",
-                () -> assertEquals("Jane", name.getFirst(), "First name not parsed correctly after setName"),
-                () -> assertEquals("Smith", name.getLast(), "Last name not parsed correctly after setName")
-            );
+                    () -> assertEquals("Jane", name.getFirst(), "First name not parsed correctly after setName"),
+                    () -> assertEquals("Smith", name.getLast(), "Last name not parsed correctly after setName"));
         }
         // ... other tests looked okay ...
     }
@@ -90,7 +91,7 @@ public class LabTests {
             StringRipper sr = new StringRipper("HelloWorld");
             // NOTE: Adjusted based on your likely intent (Inclusive End Index)
             // If using standard Java substring logic, expected should be "Hell"
-            String ripped = sr.ripString(0, 4); 
+            String ripped = sr.ripString(0, 4);
             assertEquals("Hello", ripped, "ripString(0,4) should return characters at indices 0,1,2,3,4");
         }
 
